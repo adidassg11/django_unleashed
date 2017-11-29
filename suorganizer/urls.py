@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from organizer.views import homepage
+from organizer.views import homepage, tag_detail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^tag/(?P<slug>[\w\-]+)/$', tag_detail),
     url(r'^$', homepage),
 ]
